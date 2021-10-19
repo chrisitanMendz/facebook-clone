@@ -1,0 +1,40 @@
+@import "../../../utilities.scss";
+
+.skeletonUserContainer {
+  display: flex;
+  align-items: center;
+  border-radius: 10px;
+  padding: 5px 8px;
+  cursor: pointer;
+
+  .skeletonImage {
+    height: 36px;
+    width: 36px;
+    border-radius: 50px;
+    margin: 0 5px 0 0;
+    background: $lightGray;
+    animation: lighting 2.3s linear infinite;
+  }
+  .skeletonTextWrapper {
+    width: 200px;
+    padding: 16px 0;
+
+    .skeletonText {
+      height: 15px;
+      background: $lightGray;
+      animation: lighting 2.3s linear infinite;
+    }
+  }
+}
+
+@keyframes lighting {
+  0% {
+    background: #e8ebee;
+  }
+  50% {
+    background: #dddee2;
+  }
+  100% {
+    background: #e8ebee;
+  }
+}

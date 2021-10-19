@@ -1,0 +1,125 @@
+@import "../../../../../utilities.scss";
+
+.section {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  background-color: rgba(255, 255, 255, 0.781);
+  z-index: 2000;
+  padding: 0 20px;
+  opacity: 1;
+  z-index: 200;
+  display: grid;
+  place-items: center;
+
+  .container {
+    position: relative;
+    width: 100%;
+    max-width: 500px;
+    background-color: #fff;
+    box-shadow: 0 3px 20px rgba(0, 0, 0, 0.534);
+    border-radius: 10px;
+  }
+
+  .header {
+    position: relative;
+    border-bottom: 2px solid $secondBackground;
+    padding: 0 16px;
+
+    h4 {
+      position: relative;
+      font-size: 15px;
+      font-weight: 600;
+      padding: 15px 0;
+      width: fit-content;
+
+      &::after {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 3px;
+        left: 0;
+        bottom: -2px;
+        background-color: $blue;
+        border-radius: 50px;
+      }
+    }
+
+    .iconContainer {
+      position: absolute;
+      width: 36px;
+      height: 36px;
+      border-radius: 50px;
+      top: 7.5px;
+      right: 16px;
+      background-color: $lightGray;
+      display: grid;
+      place-items: center;
+      cursor: pointer;
+
+      &:hover {
+        filter: brightness(0.95);
+      }
+
+      .icon {
+        font-size: 25px;
+        color: $gray;
+      }
+    }
+  }
+
+  .reactorsContainer {
+    padding: 10px 0 10px 16px;
+    margin: 0 8px 0 0;
+    max-height: 40vh;
+    overflow: auto;
+
+    &::-webkit-scrollbar {
+      width: 8px;
+    }
+
+    &::-webkit-scrollbar-track {
+      background: transparent;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background: rgb(192, 192, 192);
+      border-radius: 100px;
+    }
+
+    &::-webkit-scrollbar-thumb:hover {
+      background: rgb(168, 168, 168);
+    }
+
+    .reactorWrapper {
+      display: flex;
+      align-items: center;
+      padding: 5px 0;
+
+      .imgContainer {
+        position: relative;
+        margin: 0 10px 0 0;
+
+        .profile {
+          width: 40px;
+          height: 40px;
+          border-radius: 999px;
+        }
+
+        .likeIcon {
+          position: absolute;
+          bottom: 0;
+          right: 0;
+        }
+      }
+
+      h3 {
+        font-size: 15px;
+        color: $black;
+        font-weight: 600;
+      }
+    }
+  }
+}

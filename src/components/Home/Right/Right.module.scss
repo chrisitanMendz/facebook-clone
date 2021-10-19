@@ -1,0 +1,120 @@
+@import "../../../utilities.scss";
+
+.rightNavContainer {
+  position: sticky;
+  top: 55px;
+  right: 0;
+  align-self: start;
+  padding: 15px 16px 0 0;
+  justify-self: flex-end;
+
+  @media (max-width: "1313px") {
+    grid-column: 2 / 3;
+    grid-row: 1 / 2;
+  }
+
+  @media (max-width: "980px") {
+    display: none;
+  }
+}
+
+.mainWrapper {
+  width: 320px;
+  max-height: calc(100vh - 80px);
+  overflow-y: hidden;
+  padding: 0 8px 0 0;
+  transition: 0s;
+
+  &:hover {
+    overflow-y: scroll;
+    padding: 0;
+  }
+
+  &::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  /* Track */
+  &::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  /* Handle */
+  &::-webkit-scrollbar-thumb {
+    background: rgb(192, 192, 192);
+    border-radius: 100px;
+  }
+
+  /* Handle on hover */
+  &::-webkit-scrollbar-thumb:hover {
+    background: rgb(168, 168, 168);
+  }
+
+  .title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 0 5px 0;
+    padding: 0 0 0 8px;
+
+    h3 {
+      font-size: 17px;
+      font-weight: 600;
+      color: $gray;
+    }
+
+    .iconWrapper {
+      display: flex;
+      align-items: center;
+
+      .iconCon {
+        display: grid;
+        place-items: center;
+        margin: 0 0 0 6px;
+        height: 32px;
+        width: 32px;
+        border-radius: 50px;
+        background-color: $secondBackground;
+        cursor: pointer;
+
+        &:hover {
+          filter: brightness(0.9);
+        }
+
+        .icon {
+          font-size: 15px;
+          color: $gray;
+          opacity: 0.7;
+        }
+      }
+    }
+  }
+
+  .userInfo {
+    li {
+      display: flex;
+      align-items: center;
+      border-radius: 10px;
+      padding: 5px 8px;
+      cursor: pointer;
+
+      &:hover {
+        background-color: $lightGray;
+      }
+
+      img {
+        height: 36px;
+        width: 36px;
+        border-radius: 50px;
+        margin: 0 5px 0 0;
+      }
+
+      h1 {
+        font-size: 15px;
+        color: $black;
+        padding: 12px 0;
+        font-weight: 400;
+      }
+    }
+  }
+}

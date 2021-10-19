@@ -1,0 +1,28 @@
+img {
+  display: block;
+}
+
+$white: #fff;
+$secondBackground: #f0f2f5;
+$blue: #1877f2;
+$darkBlue: #1666d0;
+$lightBlue: #e7f2fe;
+$gray: #65676b;
+$lightGray: #e4e6eb;
+$black: #050505;
+$textBlack: #323232;
+$darkBlack: #151515;
+$green: #31a24c;
+
+@mixin boxShadow {
+  box-shadow: 0 1px 2px #00000028;
+}
+
+@mixin container {
+  position: relative;
+  box-shadow: 0 1px 2px #00000028;
+  background-color: #fff;
+  width: 100%;
+  border-radius: 8px;
+  margin: 0 0 15px 0;
+}

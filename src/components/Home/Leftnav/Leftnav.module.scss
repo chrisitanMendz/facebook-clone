@@ -1,0 +1,42 @@
+@import "../../../utilities.scss";
+
+.leftNav {
+  position: sticky;
+  top: 55px;
+  left: 0;
+  align-self: start;
+  padding: 16px 0 0 10px;
+
+  @media (max-width: "1313px") {
+    display: none;
+  }
+
+  li {
+    display: flex;
+    align-items: center;
+    line-height: 0px;
+    padding: 9px 10px;
+    margin: 0 0 0 -5px;
+    white-space: nowrap;
+    border-radius: 5px;
+    font-weight: 500;
+    color: $textBlack;
+    font-size: 15px;
+    cursor: pointer;
+    max-width: 300px;
+    transition: 0.2s ease;
+
+    &:hover {
+      background-color: $lightGray;
+    }
+
+    img {
+      margin: 0 10px 0 0;
+      border-radius: 50px;
+    }
+
+    .icon {
+      margin: 0 10px 0 0;
+    }
+  }
+}

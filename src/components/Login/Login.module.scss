@@ -1,0 +1,166 @@
+@import "../../utilities.scss";
+
+.section {
+  background-color: $secondBackground;
+
+  .container {
+    position: relative;
+    min-height: 100vh;
+    max-width: 1100px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding: 0 10px;
+
+    @media (max-width: "900px") {
+      grid-template-columns: 1fr;
+    }
+
+    .logoContainer {
+      justify-self: center;
+      align-self: center;
+      margin: -80px 0 0 0;
+
+      @media (max-width: "900px") {
+        margin: 20px 0 0 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        h2 {
+          text-align: center;
+        }
+      }
+
+      img {
+        width: 301px;
+        margin: 0 0 0 -28px;
+      }
+
+      h2 {
+        font-size: 28px;
+        font-weight: 400;
+        max-width: 500px;
+        color: #1c1e21;
+        margin: -15px 0 0 0;
+      }
+    }
+
+    .formContainer {
+      margin: -50px 0 0 0;
+      align-self: center;
+      justify-self: center;
+
+      .formWrapper {
+        border-radius: 10px;
+        background-color: #fff;
+        max-width: 450px;
+        box-shadow: 0 3px 10px rgba(0, 0, 0, 0.151);
+        padding: 8px 15px;
+        margin: 0 0 25px 0;
+
+        form {
+          display: flex;
+          flex-direction: column;
+          margin: 0 0 20px 0;
+
+          input {
+            width: 100%;
+            padding: 14px 16px;
+            margin: 6px 0;
+            border: 1px solid #dddfe2;
+            border-radius: 5px;
+            font-size: 16px;
+            outline: none;
+
+            &:focus {
+              border: 1px solid $blue;
+            }
+          }
+
+          h6 {
+            font-size: 12px;
+            font-weight: 400;
+            color: red;
+            align-self: flex-end;
+            margin: 0 10px 0 0;
+          }
+
+          button {
+            border-radius: 5px;
+            background-color: $blue;
+            color: #fff;
+            font-weight: 600;
+            border: none;
+            font-size: 20px;
+            padding: 10px 0;
+            margin: 15px 0 0 0;
+            cursor: pointer;
+
+            &:hover {
+              background-color: #1464cc;
+            }
+          }
+        }
+
+        .loginWithGoogle {
+          position: relative;
+          padding: 20px 0 10px 0;
+          border-top: 2px solid #dddfe2;
+          display: flex;
+          justify-content: center;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+
+          &::after {
+            position: absolute;
+            content: "OR";
+            width: 40px;
+            height: 15px;
+            background-color: #fff;
+            top: -10px;
+            left: calc(50% - 20px);
+            font-size: 15px;
+            display: grid;
+            place-items: center;
+            color: #1c1e21;
+          }
+
+          button {
+            min-height: 40px;
+            border-radius: 5px;
+            background-color: #fff;
+            color: rgb(102, 102, 102);
+            box-shadow: 0 0 3px rgba(0, 0, 0, 0.411);
+            font-weight: 600;
+            border: none;
+            font-size: 16px;
+            padding: 10px 20px;
+            left: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            line-height: 1px;
+
+            &:hover {
+              box-shadow: 0 0 6px $blue;
+              background-color: rgb(245, 245, 245);
+            }
+
+            img {
+              width: 20px;
+              margin: 0 10px 0 0;
+            }
+          }
+        }
+      }
+
+      .create {
+        font-size: 14px;
+        text-align: center;
+        color: #1c1e21;
+      }
+    }
+  }
+}

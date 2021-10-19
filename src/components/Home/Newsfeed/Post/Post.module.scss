@@ -1,0 +1,340 @@
+@import "../../../../utilities.scss";
+
+.section {
+  @include container;
+
+  @media (max-width: "600px") {
+    border-radius: 0;
+  }
+
+  header {
+    display: flex;
+    padding: 20px 20px 5px 20px;
+
+    @media (max-width: "600px") {
+      padding: 10px 10px 5px 10px;
+    }
+
+    .imgWrapper {
+      margin: 0 10px 0 0;
+
+      img {
+        width: 40px;
+        height: 40px;
+        border-radius: 50px;
+      }
+    }
+
+    .nameTimeWrapper {
+      h1 {
+        font-size: 15px;
+        font-weight: 600;
+        color: $black;
+      }
+      p {
+        font-size: 13px;
+        color: $gray;
+      }
+    }
+
+    .dotsWrapper {
+      position: relative;
+      display: flex;
+      justify-content: flex-end;
+      flex: 1;
+      width: 36px;
+      height: 36px;
+      color: $gray;
+      border-radius: 50px;
+      background-color: #fff;
+
+      .threeDotsWrapper {
+        width: 36px;
+        height: 36px;
+        display: grid;
+        place-items: center;
+        border-radius: 50px;
+        font-size: 25px;
+        cursor: pointer;
+
+        &:hover {
+          background-color: $secondBackground;
+        }
+
+        .icon {
+          color: $gray;
+          opacity: 0.7;
+          pointer-events: none;
+        }
+      }
+
+      .deleteWrapper {
+        position: absolute;
+        list-style: none;
+        right: 0;
+        bottom: -45px;
+        background-color: rgb(255, 255, 255);
+        box-shadow: 0 4px 7px rgba(0, 0, 0, 0.445);
+        color: $textBlack;
+        padding: 8px 16px;
+        border-radius: 5px;
+        font-weight: bold;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        font-size: 15px;
+        white-space: nowrap;
+
+        &:hover {
+          filter: brightness(0.98);
+
+          .trashIcon {
+            transition: 0.1s;
+            opacity: 0.9;
+          }
+        }
+
+        .trashIcon {
+          color: $gray;
+          opacity: 0.6;
+          font-size: 15px;
+          margin: 0 8px 0 0;
+          transition: 0.1s;
+        }
+      }
+    }
+  }
+
+  .caption {
+    padding: 10px 20px 10px 20px;
+
+    @media (max-width: "600px") {
+      padding: 10px 10px;
+    }
+
+    pre {
+      text-align: left;
+      white-space: pre-line;
+      font-size: 15px;
+      color: $black;
+    }
+  }
+
+  .imgWrapper {
+    img {
+      width: 100%;
+      background-color: $lightGray;
+      display: block;
+    }
+  }
+
+  .reactComentWrapper {
+    display: flex;
+    align-items: center;
+    padding: 10px 20px;
+
+    @media (max-width: "600px") {
+      padding: 10px;
+    }
+
+    .reactWrapper {
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+
+      &:hover {
+        text-decoration: underline;
+      }
+
+      img {
+        border-radius: 50px;
+        width: 18px;
+        height: 18px;
+        border: 1px solid #fff;
+      }
+
+      p {
+        font-size: 15px;
+        color: $gray;
+        margin: 0 0 0 6px;
+      }
+    }
+
+    .commentWrapper {
+      flex: 1;
+      display: flex;
+      justify-content: flex-end;
+
+      p {
+        font-size: 15px;
+        color: $gray;
+        cursor: pointer;
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+
+  .likeCommentWrapper {
+    padding: 0 20px;
+
+    @media (max-width: "600px") {
+      padding: 0 10px;
+    }
+
+    .wrapper {
+      display: flex;
+      border-top: 1.5px solid $lightGray;
+      padding: 4px 0;
+
+      div {
+        flex: 1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 7px 0;
+        border-radius: 5px;
+        cursor: pointer;
+
+        &:hover {
+          background-color: $secondBackground;
+        }
+
+        .logo {
+          margin: 0 7px 0 0;
+          opacity: 0.5;
+          font-size: 20px;
+        }
+
+        .liked {
+          fill: $blue !important;
+          margin: 0 7px 0 0;
+          font-size: 20px;
+          animation: toLike 0.4s ease;
+        }
+
+        p {
+          font-size: 15px;
+          color: $gray;
+        }
+      }
+    }
+  }
+}
+
+.sectionAlert {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  background-color: rgba(255, 255, 255, 0.781);
+  z-index: 2000;
+  padding: 0 20px;
+  opacity: 1;
+  z-index: 200;
+  display: grid;
+  place-items: center;
+
+  .container {
+    position: relative;
+    width: 100%;
+    max-width: 500px;
+    background-color: #fff;
+    box-shadow: 0 3px 20px rgba(0, 0, 0, 0.534);
+    border-radius: 10px;
+  }
+
+  .header {
+    position: relative;
+    border-bottom: 2px solid $secondBackground;
+    padding: 0 16px;
+
+    h4 {
+      position: relative;
+      font-size: 20px;
+      font-weight: 600;
+      padding: 15px 0;
+      width: fit-content;
+    }
+
+    .iconContainer {
+      position: absolute;
+      width: 36px;
+      height: 36px;
+      border-radius: 50px;
+      top: 50%;
+      transform: translateY(-50%);
+      right: 16px;
+      background-color: $lightGray;
+      display: grid;
+      place-items: center;
+      cursor: pointer;
+
+      &:hover {
+        filter: brightness(0.95);
+      }
+
+      .icon {
+        font-size: 25px;
+        color: $gray;
+      }
+    }
+  }
+
+  .body {
+    p {
+      font-size: 15px;
+      color: $textBlack;
+      padding: 12px 16px;
+    }
+
+    .buttonContainer {
+      display: flex;
+      justify-content: flex-end;
+      padding: 12px;
+
+      button {
+        padding: 6px 12px;
+        font-size: 15px;
+        font-weight: 600;
+        border: none;
+        border-radius: 5px;
+        background-color: transparent;
+        cursor: pointer;
+        transition: 0.2s ease;
+
+        &:hover {
+          filter: brightness(0.95);
+        }
+      }
+
+      .cancel {
+        color: $blue;
+        background-color: white;
+      }
+
+      .confirm {
+        color: white;
+        background-color: $blue;
+        margin-left: 10px;
+      }
+    }
+  }
+}
+
+@keyframes toLike {
+  0% {
+    transform: scale(0.9);
+    fill: $gray;
+  }
+  70% {
+    transform: scale(1.5) rotateZ(-10deg);
+    fill: $blue;
+  }
+  100% {
+    transform: scale(1);
+  }
+}

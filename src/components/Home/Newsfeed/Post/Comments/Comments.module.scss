@@ -1,0 +1,252 @@
+@import "../../../../../utilities.scss";
+
+.commentSection {
+  padding: 10px 0;
+  margin: 0 20px;
+  border-top: 1px solid $lightGray;
+
+  @media (max-width: "355px") {
+    margin: 0 10px;
+  }
+
+  .allMessage {
+    margin: 0 0 10px 0;
+
+    .chatWrapper {
+      display: flex;
+      margin: 0 0 10px 0;
+
+      img {
+        width: 32px;
+        height: 32px;
+        border-radius: 50px;
+        margin: 0 5px 0 0;
+        background-color: $lightGray;
+      }
+
+      .nameMessage_buttonWrapper {
+        position: relative;
+        max-width: 70%;
+
+        .nameMessageWrapper {
+          position: relative;
+          background-color: $secondBackground;
+          border-radius: 15px;
+          padding: 8px 12px;
+          max-width: 100%;
+          overflow: hidden;
+
+          h4 {
+            color: $black;
+            font-weight: 600;
+            font-size: 13px;
+          }
+
+          pre {
+            color: $black;
+            font-size: 15px;
+            font-weight: 300;
+            line-height: 18px;
+            margin: 3px 0 0 0;
+            max-width: 100%;
+            text-align: left;
+            white-space: pre-line;
+          }
+        }
+
+        .buttonWrapper {
+          padding: 0 12px;
+          font-size: 13px;
+          color: $gray;
+
+          button {
+            background-color: transparent;
+            border: none;
+            color: $gray;
+            font-weight: 600;
+          }
+        }
+      }
+
+      .iconWrapper {
+        display: grid;
+        place-content: center;
+        background-color: white;
+        padding: 0;
+        margin: 0 0 0 5px;
+
+        .iconCon {
+          display: grid;
+          place-content: center;
+          height: 40px;
+          width: 40px !important;
+          padding: 20px;
+          margin: -18px 0 0 0;
+          border-radius: 50px;
+          background-color: #fff;
+          cursor: pointer;
+
+          &:hover {
+            filter: brightness(0.95);
+          }
+
+          .icon {
+            color: $gray;
+            opacity: 0.3;
+            font-size: 15px;
+            pointer-events: none;
+          }
+        }
+      }
+    }
+  }
+
+  .inputComment {
+    display: flex;
+
+    .imageContainer {
+      position: relative;
+      height: 32px;
+      width: 32px;
+
+      &::after {
+        content: "";
+        position: absolute;
+        width: 8px;
+        height: 8px;
+        bottom: 0;
+        right: 0;
+        border-radius: 50px;
+        border: 2px solid white;
+        background-color: $green;
+      }
+
+      img {
+        width: 100%;
+        height: 100%;
+        border-radius: 100px;
+      }
+    }
+
+    .textAreaWrapper {
+      flex: 1;
+      display: flex;
+      background-color: $secondBackground;
+      border-radius: 15px;
+      align-items: center;
+      margin: 0 0 0 5px;
+      padding: 5px 15px;
+
+      input {
+        flex: 1;
+        background-color: transparent;
+        border: none;
+        outline: none;
+        font-size: 15px;
+        color: $black;
+        width: 100%;
+      }
+    }
+  }
+}
+
+.section {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  background-color: rgba(255, 255, 255, 0.781);
+  z-index: 2000;
+  padding: 0 20px;
+  opacity: 1;
+  z-index: 200;
+  display: grid;
+  place-items: center;
+
+  .container {
+    position: relative;
+    width: 100%;
+    max-width: 500px;
+    background-color: #fff;
+    box-shadow: 0 3px 20px rgba(0, 0, 0, 0.534);
+    border-radius: 10px;
+  }
+
+  .header {
+    position: relative;
+    border-bottom: 2px solid $secondBackground;
+    padding: 0 16px;
+
+    h4 {
+      position: relative;
+      font-size: 20px;
+      font-weight: 600;
+      padding: 15px 0;
+      width: fit-content;
+    }
+
+    .iconContainer {
+      position: absolute;
+      width: 36px;
+      height: 36px;
+      border-radius: 50px;
+      top: 50%;
+      transform: translateY(-50%);
+      right: 16px;
+      background-color: $lightGray;
+      display: grid;
+      place-items: center;
+      cursor: pointer;
+
+      &:hover {
+        filter: brightness(0.95);
+      }
+
+      .icon {
+        font-size: 25px;
+        color: $gray;
+      }
+    }
+  }
+
+  .body {
+    p {
+      font-size: 15px;
+      color: $textBlack;
+      padding: 12px 16px;
+    }
+
+    .buttonContainer {
+      display: flex;
+      justify-content: flex-end;
+      padding: 12px;
+
+      button {
+        padding: 6px 12px;
+        font-size: 15px;
+        font-weight: 600;
+        border: none;
+        border-radius: 5px;
+        background-color: transparent;
+        cursor: pointer;
+        transition: 0.2s ease;
+
+        &:hover {
+          filter: brightness(0.95);
+        }
+      }
+
+      .cancel {
+        color: $blue;
+        background-color: white;
+      }
+
+      .confirm {
+        color: white;
+        background-color: $blue;
+        margin-left: 10px;
+      }
+    }
+  }
+}

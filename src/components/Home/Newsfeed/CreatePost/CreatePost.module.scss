@@ -1,0 +1,108 @@
+@import "../../../../utilities.scss";
+
+.postingContainer {
+  background-color: #fff;
+  border-radius: 8px;
+  padding: 0 18px;
+  margin: 0 0 15px 0;
+  @include boxShadow;
+
+  @media (max-width: "600px") {
+    padding: 0 10px;
+    border-radius: 0;
+  }
+
+  .div1 {
+    position: relative;
+    display: flex;
+    padding: 13px 0;
+
+    &::before {
+      position: absolute;
+      content: "";
+      width: 100%;
+      bottom: 0;
+      left: 0;
+      height: 1.5px;
+      background-color: $lightGray;
+    }
+
+    img {
+      flex: 1fr;
+      border-radius: 50px;
+      height: 40px;
+      margin: 0 10px 0 0;
+      cursor: pointer;
+
+      &:hover {
+        filter: brightness(0.9);
+      }
+    }
+
+    div {
+      position: relative;
+      flex: 1;
+      width: 100%;
+      font-size: 18px;
+      border-radius: 20px;
+      border: none;
+      outline: none;
+      padding: 6.7px 20px;
+      background-color: $secondBackground;
+      display: flex;
+      align-items: center;
+      color: $gray;
+      cursor: pointer;
+
+      &:hover {
+        filter: brightness(0.9);
+      }
+    }
+  }
+
+  .div2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    place-items: center;
+    padding: 8px 0;
+
+    @media (max-width: "540px") {
+      grid-template-columns: 1fr 1fr;
+
+      .button {
+        &:nth-child(3) {
+          display: none;
+        }
+      }
+    }
+
+    .button {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 10px;
+      border-radius: 5px;
+      white-space: nowrap;
+      cursor: pointer;
+
+      .icon {
+        margin: 0 5px 0 0;
+      }
+
+      p {
+        font-size: 15px;
+        font-weight: 600;
+        color: $gray;
+
+        @media (max-width: "355px") {
+          font-size: 14px;
+        }
+      }
+
+      &:hover {
+        background-color: $secondBackground;
+      }
+    }
+  }
+}

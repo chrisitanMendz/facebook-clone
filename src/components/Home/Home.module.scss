@@ -1,0 +1,17 @@
+@import "../../utilities.scss";
+
+.homeContainer {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 20px;
+  background: transparent;
+
+  @media (max-width: "1313px") {
+    grid-template-columns: 5fr 1fr;
+  }
+
+  @media (max-width: "980px") {
+    grid-template-columns: 1fr;
+  }
+}

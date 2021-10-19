@@ -1,0 +1,64 @@
+@import "../../../utilities.scss";
+
+.skeletonPostContainer {
+  @include container;
+  padding: 20px;
+
+  .skeletonHeader {
+    position: relative;
+    display: flex;
+    align-items: center;
+
+    .skeletonImage {
+      width: 40px;
+      height: 40px;
+      border-radius: 999px;
+      background-color: $lightGray;
+      margin: 0 8px 0 0;
+      animation: lighting 2.3s linear infinite;
+    }
+
+    .skeletonTextWrapper {
+      width: 100%;
+      .skeletonText {
+        height: 10px;
+        border-radius: 999px;
+        background: $lightGray;
+        max-width: 150px;
+        margin: 0 0 5px 0;
+        animation: lighting 2.3s linear infinite;
+      }
+    }
+  }
+
+  .skeletonButtonContainer {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    margin: 200px 0 0 0;
+
+    .skeletonButtonWrapper {
+      display: grid;
+      place-items: center;
+
+      .skeletonText {
+        height: 10px;
+        border-radius: 999px;
+        background: $lightGray;
+        animation: lighting 2.3s linear infinite;
+        width: 50%;
+      }
+    }
+  }
+}
+
+@keyframes lighting {
+  0% {
+    background: #f4f4f4;
+  }
+  50% {
+    background: $lightGray;
+  }
+  100% {
+    background: #f4f4f4;
+  }
+}

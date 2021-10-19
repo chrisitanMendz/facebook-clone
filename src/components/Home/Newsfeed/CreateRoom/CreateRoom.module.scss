@@ -1,0 +1,78 @@
+@import "../../../../utilities.scss";
+
+.createRoomContainer {
+  @include container;
+  padding: 15px 20px;
+  display: flex;
+
+  @media (max-width: "600px") {
+    border-radius: 0;
+    padding: 15px 10px;
+  }
+
+  @media (max-width: "425px") {
+    display: none;
+  }
+
+  .iconContainer {
+    display: flex;
+    align-items: center;
+    box-shadow: 0 0px 3px rgba(0, 0, 255, 0.322);
+    background-color: #fff;
+    width: fit-content;
+    padding: 5px 15px;
+    border-radius: 50px;
+    cursor: pointer;
+    margin: 0 17px 0 0;
+
+    &:hover {
+      background-color: $secondBackground;
+    }
+
+    .icon {
+      margin: 0 10px 0 0;
+    }
+
+    p {
+      color: $blue;
+      font-size: 15px;
+      font-weight: 600;
+      white-space: nowrap;
+    }
+  }
+
+  .userContainer {
+    flex: 1;
+    display: flex;
+    align-items: center;
+
+    .userWrapper {
+      position: relative;
+      width: 40px;
+      height: 40px;
+      border-radius: 50px;
+      margin: 0 17px 0 0;
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+      background-color: $lightGray;
+
+      @media (max-width: "480px") {
+        &:nth-child(4) {
+          display: none;
+        }
+      }
+
+      .active {
+        width: 12px;
+        height: 12px;
+        background-color: $green;
+        position: absolute;
+        bottom: 0px;
+        right: 0px;
+        border-radius: 50px;
+        border: 2px solid #fff;
+      }
+    }
+  }
+}
